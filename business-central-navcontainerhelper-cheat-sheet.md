@@ -1,5 +1,5 @@
 ---
-title: Business Central NAVContainerHelper Cheat Sheet
+title: NAVContainerHelper
 nav_order: 4
 ---
 

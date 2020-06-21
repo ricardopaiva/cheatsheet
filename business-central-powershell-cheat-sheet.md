@@ -1,5 +1,5 @@
 ---
-title: Business Central Powershell Cheat Sheet
+title: Business Central Powershell
 nav_order: 3
 ---
 

@@ -30,7 +30,8 @@ url: "https://ricardopaiva.github.io/cheatsheet" # the base hostname & protocol 
 permalink: pretty
 
 # Build settings
-theme: just-the-docs
+#theme: just-the-docs
+remote_theme: pmarsceill/just-the-docs
 #plugins:
 #  - jekyll-feed
 

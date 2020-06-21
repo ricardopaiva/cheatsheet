@@ -1,5 +1,5 @@
 ---
-title: Docker Cheat Sheet
+title: Docker
 nav_order: 2
 ---
 
