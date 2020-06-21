@@ -2,8 +2,10 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: page
+layout: default
 title: Home
+nav_order: 1
 permalink: /
 ---
-A few cheat sheets.
+
+Docker and BC cheat sheets.

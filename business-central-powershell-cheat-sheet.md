@@ -1,6 +1,6 @@
 ---
 title: Business Central Powershell Cheat Sheet
-nav_order: 2
+nav_order: 3
 ---
 
 # {{ page.title }}
