@@ -53,7 +53,7 @@ nav_order: 2
 
 **Get container ip address**
 
-* docker inspect -f "{{ range .NetworkSettings.Networks }}{{ ".IPAddress" }}{{end}}" <docker id>
+* docker inspect -f "{{range .NetworkSettings.Networks}}{{ ".IPAddress" }}{{end}}" <docker id>
 
 **Copy a local file to the container**
 
