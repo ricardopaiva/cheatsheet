@@ -5,7 +5,8 @@
 layout: default
 title: Home
 nav_order: 1
+description: "Just a website with some cheat sheets related Docker, Business Central and others I may find useful."
 permalink: /
 ---
 
-Docker and BC cheat sheets.
+Cheat sheets collection.
