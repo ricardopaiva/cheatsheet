@@ -133,7 +133,9 @@ Note 3: Configure the firewall with these rules:
 
 Note 4: if you're having issues with Docker resolving DNS addresses, take a look at this url: http://www.robertbird.co.uk/development/docker-networking-tips-and-tricks
 
-#### Copy file from container to local machine
+### Other
+
+**Copy file from container to local machine
 
 Copy-FileFromNavContainer -containername <container name> -containerpath <container file path and name to copy> -localpath <local file path and name to copy to>
 
@@ -141,7 +143,7 @@ Copy-FileFromNavContainer -containername <container name> -containerpath <contai
 Copy-FileFromNavContainer -containername dynamicsbc154 -containerpath c:/configurationpackages/NAV15.4.W1.ENU.EXTENDED.rapidstart -localpath C:\temp\NAV15.4.W1.ENU.EXTENDED.rapidstart
 ```
 
-#### Open new Powershell window in Container
+**Open new Powershell window in Container
 
 docker exec -it <container id> powershell
 
@@ -149,7 +151,7 @@ docker exec -it <container id> powershell
 docker exec -it 8e0967a5b798 powershell
 ```
 
-#### Connect to SQL from Powershell window in Container
+**Connect to SQL from Powershell window in Container
 
 SQL user = sa
 
@@ -159,7 +161,7 @@ SQL password = <same password used in container for the NAVUserPassword>
 sqlcmd
 ```
 
-#### Import bacpac file using sqlpackage
+**Import bacpac file using sqlpackage
 
 sqlpackage.exe /a:Import /sf:<bacpac file path>.bacpac /tsn:<TargetServerName> /tdn:<targetdatabaseName> /tu:<TargerUsername> /tp:<TargetPassword>
 
@@ -167,9 +169,7 @@ sqlpackage.exe /a:Import /sf:<bacpac file path>.bacpac /tsn:<TargetServerName> /
 sqlpackage.exe /a:Import /sf:C:\Temp\NAVBC_V14_CU2_SS.bacpac /tsn:192.168.187.101 /tdn:CRONUS /tu:<username> /tp:<Password>
 ```
 
-##### 
-
-#### Create User Login in Docker SQL, from Powershell window in Container
+**Create User Login in Docker SQL, from Powershell window in Container
 
 ```
 CREATE LOGIN <loginname> WITH PASSWORD = 'WRITE PASSWORD HERE';
@@ -191,7 +191,6 @@ Changed database context to 'CRONUS'.
 ALTER ROLE db_datareader ADD MEMBER <loginname>
 GO
 ```
-
 
 ## Troubleshooting
 
