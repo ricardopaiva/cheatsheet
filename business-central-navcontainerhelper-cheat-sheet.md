@@ -49,9 +49,7 @@ Update-Module navcontainerhelper
 
 ## Dynamics 365 Business Central Installation
 
-### Create BC container using artifacts
-
-More info: https://freddysblog.com/2020/06/25/working-with-artifacts/
+### Get Artifacts
 
 #### Obtaining BC artifacts
 
@@ -79,7 +77,31 @@ $artifactUrl = Get-BCArtifactUrl -version 15 -country us -select Latest  # D365 
 $artifactUrl = Get-BCArtifactUrl -version 16 -country us -select Latest  # D365 BC 2020 Release Wave 1 (V16), Latest update, US
 ```
 
-#### Creating BC container using artifacts
+#### Get BC Artifacts List
+
+```
+Write-Host -ForegroundColor Yellow "Get US sandbox artifact url for current version (Latest)"
+Get-BCArtifactUrl -country "us"
+
+Write-Host -ForegroundColor Yellow "Get all US sandbox artifact urls"
+Get-BCArtifactUrl -country "us" -select All
+
+Write-Host -ForegroundColor Yellow "Get US sandbox artifact url for a version closest to 16.2.13509.13700"
+Get-BCArtifactUrl -country "us" -version "16.2.13509.13700" -select Closest
+
+Write-Host -ForegroundColor Yellow "Get latest 16.1 US sandbox artifact url"
+Get-BCArtifactUrl -country "us" -version "16.1"
+
+Write-Host -ForegroundColor Yellow "Get latest 15.x US sandbox artifact url"
+Get-BCArtifactUrl -country "us" -version "15"
+
+Write-Host -ForegroundColor Yellow "Get all Danish NAV and Business Central artifact urls"
+Get-BCArtifactUrl -type OnPrem -country "dk" -select All
+```
+
+### Create BC container using artifacts
+
+More info: https://freddysblog.com/2020/06/25/working-with-artifacts/
 
 $containername = 'bcsandbox154qa'
 $artifactUrl = Get-BCArtifactUrl -version 15 -country us -select Latest  # D365 BC 2019 Release Wave 2 (V15), Latest update, US
@@ -110,26 +132,25 @@ New-BcContainer `
 
 ```
 
-### Get BC Artifacts List
+### Download and install certificate
+
+After the container creation you get the url to the certificate:
+
+> Files:
+> http://bccontainer:8080/ALLanguage.vsix
+> http://bccontainer:8080/certificate.cer
+
+To download the container and import to the Trusted Root store do:
+
 
 ```
-Write-Host -ForegroundColor Yellow "Get US sandbox artifact url for current version (Latest)"
-Get-BCArtifactUrl -country "us"
+### Download the certificate from container
+$url = 'http://bccontainer:8080/certificate.cer'
+$output = 'C:\Temp\certificate.cer'
+Invoke-WebRequest -Uri $url -OutFile $output
 
-Write-Host -ForegroundColor Yellow "Get all US sandbox artifact urls"
-Get-BCArtifactUrl -country "us" -select All
-
-Write-Host -ForegroundColor Yellow "Get US sandbox artifact url for a version closest to 16.2.13509.13700"
-Get-BCArtifactUrl -country "us" -version "16.2.13509.13700" -select Closest
-
-Write-Host -ForegroundColor Yellow "Get latest 16.1 US sandbox artifact url"
-Get-BCArtifactUrl -country "us" -version "16.1"
-
-Write-Host -ForegroundColor Yellow "Get latest 15.x US sandbox artifact url"
-Get-BCArtifactUrl -country "us" -version "15"
-
-Write-Host -ForegroundColor Yellow "Get all Danish NAV and Business Central artifact urls"
-Get-BCArtifactUrl -type OnPrem -country "dk" -select All
+### Import downloaded certificate to trusted root
+Import-Certificate -FilePath $output -CertStoreLocation 'Cert:\LocalMachine\Root' -Verbose
 ```
 
 ### Get NAV/BC Containers List
