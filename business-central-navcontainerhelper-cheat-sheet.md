@@ -172,6 +172,29 @@ Stop-NavContainer -containerName "<container name>"
 Stop-NavContainer -containerName "BC140CU4W1"
 ```
 
+## Extension Management
+
+### Publish an extension
+
+Publish-NavContainerApp -containerName "<container name>" -appFile "<app file path>"
+
+Optional parameters:
+
+* -sync => synchronized the app;
+* -install => installs the app;
+
+The below script will **publish**, **sync** and **install** the app in c:\temp\my.app in the NAV container called test.
+
+```
+Publish-NavContainerApp -containerName "test" -appFile "c:\temp\my.app" -skipVerification -sync -install
+```
+
+If you only publish the app, you can use **Sync-NavContainerApp** and **Install-NavContainerApp** to sync and install the app later.
+
+
+
+## Other commands
+
 ### Import objects to BC
 
 Import-ObjectsToNavContainer -containerName "<container name>" -objectsFile "<objects file path and name>"
