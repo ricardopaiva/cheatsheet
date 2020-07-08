@@ -35,6 +35,18 @@ uninstall-module navcontainerhelper
 C:\Program Files\WindowsPowerShell\Modules\navcontainerhelper\<version>
 ```
 
+### Get NAVContainerHelper installed module version
+
+```
+Get-InstalledModule navcontainerhelper
+```
+
+### Update NAVContainerHelper module
+
+```
+Update-Module navcontainerhelper
+```
+
 ## Dynamics 365 Business Central Installation
 
 ### Create BC container (will download image if necessary)
