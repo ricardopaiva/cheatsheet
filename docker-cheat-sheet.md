@@ -133,6 +133,32 @@ Note 3: Configure the firewall with these rules:
 
 Note 4: if you're having issues with Docker resolving DNS addresses, take a look at this url: http://www.robertbird.co.uk/development/docker-networking-tips-and-tricks
 
+
+
+### Events Logs
+
+Note: First create a Powershell session to the container (docker exec -it  <container_id> powershell)
+
+**Get the latest application logs from the container**
+
+Get-Eventlog -newest <top x> <type>
+
+```
+Get-Eventlog -newest 20 application
+```
+
+**Get the message for each log**
+
+(Get-Eventlog -index <index> <type>).message
+
+```
+(Get-Eventlog -index 7004 application).message
+```
+
+More info: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1
+
+
+
 ### Other
 
 **Copy file from container to local machine**
