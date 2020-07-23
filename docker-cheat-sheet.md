@@ -157,7 +157,7 @@ Get-Eventlog -newest 20 application
 
 More info: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1
 
-
+Alternative: Check this link: https://www.hougaard.com/get-an-eventlog-from-a-docker-container/
 
 ### Other
 
