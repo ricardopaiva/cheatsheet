@@ -21,14 +21,18 @@ nav_order: 2
 **List Containers** 
 
 * docker container ls
+  
   More info: https://docs.docker.com/engine/reference/commandline/container_ls/
 
 * docker ps
+  
   Lists all running containers
+  
   More info: https://docs.docker.com/engine/reference/commandline/ps/
 
 * docker ps --all
 * docker ps -a
+  
   Lists all containers
 
 **Start Containers**
