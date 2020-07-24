@@ -1,6 +1,6 @@
 ---
 title: Business Central Features Availability
-nav_order: 6
+nav_order: 7
 ---
 
 # {{ page.title }}
