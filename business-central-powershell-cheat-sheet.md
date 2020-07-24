@@ -43,20 +43,20 @@ Skip the tenant parameter to see all tenant extensions.
 Get-NAVAppInfo -ServerInstance $serverInstance
 ```
 
+### Publish extension
+
+Publish-NAVApp -ServerInstance <server instance> -Path <path>
+
+```
+Publish-NAVApp -ServerInstance $serverInstance -Path 'C:\Temp\navapp.app'
+```
+
 ### Install extension
 
 Install-NAVApp -ServerInstance <server instance> -Name <extension name> -Version <extension version>
 
 ```
 Install-NAVApp -ServerInstance $serverInstance -Name $extensionName -Version $extensionVersion
-```
-
-### Publish extension
-
-Publish-NAVApp -ServerInstance <server instance> -Name <extension name> -Version <extension version>
-
-```
-Publish-NAVApp -ServerInstance $serverInstance -Name $extensionName -Version $extensionVersion
 ```
 
 ### Uninstall extension

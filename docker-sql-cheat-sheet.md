@@ -16,23 +16,13 @@ nav_order: 5
 
 ## SQL commands
 
-First you need to enter in the SQL command line by typing:
-
-```
-sqlcmd
-```
-
 ### Databases
 
 **List Databases** 
 
-* select name from sys.databases
-  
-
-go
+* Invoke-SqlCmd -Query "select name from sys.databases"
 
 **Backup Database**
 
-* BACKUP DATABASE [<database name>] TO DISK = N'<File full path>'
+* Invoke-SqlCmd -Query "BACKUP DATABASE [<database name>] TO DISK = N'<File full path>'"
 
-  go
