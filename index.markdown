@@ -14,3 +14,6 @@ A cheat sheets collection I made.
   * [NAVContainerHelper](https://ricardopaiva.github.io/cheatsheet/business-central-navcontainerhelper-cheat-sheet/)
   * [Business Central Versions Naming](https://ricardopaiva.github.io/cheatsheet/business-central-versions-naming/)
   * [Business Central Features Availability](https://ricardopaiva.github.io/cheatsheet/business-central-features-availability/)
+
+Last updated: 2020-07-27
+Website: https://ricardomoinhos.com/blog
