@@ -156,48 +156,56 @@ Import-Certificate -FilePath $output -CertStoreLocation 'Cert:\LocalMachine\Root
 ### Get NAV/BC Containers List
 
 ```
-Get-NavContainers
+Get-BcContainers
 ```
 
 ### Get NAV/BC Container Server Info
 
-Get-NavContainerServerConfiguration -containerName "<container name>"
+Get-BcContainerServerConfiguration -containerName "<container name>"
 
 ```
-Get-NavContainerServerConfiguration -containerName "BC140CU4W1"
+Get-BcContainerServerConfiguration -containerName "BC140CU4W1"
 ```
 
 ### Get NAV/BC Container Debug Info (info you get after creating the container)
 
-Get-NavContainerDebugInfo -containerName <container name> -ExcludeDockerInfo -ExcludeEnvVars
+Get-BcContainerDebugInfo -containerName <container name> -ExcludeDockerInfo -ExcludeEnvVars
 
 ```
-Get-NavContainerDebugInfo -containerName dynamicsbc154 -ExcludeDockerInfo -ExcludeEnvVars
+Get-BcContainerDebugInfo -containerName dynamicsbc154 -ExcludeDockerInfo -ExcludeEnvVars
 ```
 
 ### Start / Restart NAV/BC Container
 
-Start-NavContainer -containerName "<container name>"
+Start-BcContainer -containerName "<container name>"
 
 ```
-Start-NavContainer -containerName "BC140CU4W1"
-Restart-NavContainer -containerName "BC140CU4W1"
-Wait-NavContainerReady -containerName "BC140CU4W1"
+Start-BcContainer -containerName "BC140CU4W1"
+Restart-BcContainer -containerName "BC140CU4W1"
+Wait-BcContainerReady -containerName "BC140CU4W1"
 ```
 
 ### Stop NAV/BC Container
 
-Stop-NavContainer -containerName "<container name>"
+Stop-BcContainer -containerName "<container name>"
 
 ```
-Stop-NavContainer -containerName "BC140CU4W1"
+Stop-BcContainer -containerName "BC140CU4W1"
 ```
 
 ## Extension Management
 
+### Get installed extension list
+
+Get-BcContainerAppInfo -containerName "<container name>"
+
+```
+Get-BcContainerAppInfo -containerName "test"
+```
+
 ### Publish an extension
 
-Publish-NavContainerApp -containerName "<container name>" -appFile "<app file path>"
+Publish-BcContainerApp -containerName "<container name>" -appFile "<app file path>"
 
 Optional parameters:
 
@@ -207,25 +215,47 @@ Optional parameters:
 The below script will **publish**, **sync** and **install** the app in c:\temp\my.app in the NAV container called test.
 
 ```
-Publish-NavContainerApp -containerName "test" -appFile "c:\temp\my.app" -skipVerification -sync -install
+Publish-BcContainerApp -containerName "test" -appFile "c:\temp\my.app" -skipVerification -sync -install
 ```
 
-If you only publish the app, you can use **Sync-NavContainerApp** and **Install-NavContainerApp** to sync and install the app later.
+If you only publish the app, you can use **Sync-BcContainerApp** and **Install-BcContainerApp** to sync and install the app later.
 
+### Unpublish an extension
 
+Unpublish-BcContainerApp -containerName "<container name>" -appName "<app name>"
+
+Other parameters:
+
+* -uninstall => uninstalls the app before unpublising;
+* -publisher => the publisher, used when the name is not enough to identify the app;
+* -version => the version, used when there are multiple versions of the app installed;
+
+```
+Unpublish-BcContainerApp -containerName "test" -appName "MyApp" -uninstall
+```
+
+### Clean up the extension before publishing
+
+To clean up the extension, deleting all tables schema, you must sync the app with the -mode flag set to clean. This allows you to installed a previous version of the extension, for example.
+
+Sync-BcContainerApp -containerName "<container name>" -appName "<app name>" -Mode Clean
+
+```
+Sync-BcContainerApp -containerName "test" -appName "MyApp" -Mode Clean
+```
 
 ## Other commands
 
 ### Import objects to BC
 
-Import-ObjectsToNavContainer -containerName "<container name>" -objectsFile "<objects file path and name>"
+Import-ObjectsToBcContainer -containerName "<container name>" -objectsFile "<objects file path and name>"
 
 ### Compile BC objects
 
-Compile-ObjectsInNavContainer -containerName "<container name>" -filter "<filters>"
+Compile-ObjectsInBcContainer -containerName "<container name>" -filter "<filters>"
 
 ```
-Compile-ObjectsInNavContainer -containerName "BC140CU4W1"
+Compile-ObjectsInBcContainer -containerName "BC140CU4W1"
 -filter 'Type=Codeunit'
 -filter 'Modified=Yes'
 -filter 'Compiled=No'
@@ -235,13 +265,13 @@ Compile-ObjectsInNavContainer -containerName "BC140CU4W1"
 
 Create a VS Code AL Project Folder based on a Container
 
-Create-AlProjectFolderFromNavContainer -container <containerName> -alProjectFolder <AL Project Path> -name <app name> -publisher <app publisher name> -version <app version> -addGIT -useBaseLine
+Create-AlProjectFolderFromBcContainer -container <containerName> -alProjectFolder <AL Project Path> -name <app name> -publisher <app publisher name> -version <app version> -addGIT -useBaseLine
 
 Note: When using the -useBaseLine flag, the -includeAL flag must be set when creating the container.
 
 ```
 $alProjectFolder = "C:\ProgramData\NavContainerHelper\AL\BaseApp"
-Create-AlProjectFolderFromNavContainer -containerName alContainer `
+Create-AlProjectFolderFromBcContainer -containerName alContainer `
                                        -alProjectFolder $alProjectFolder `
                                        -name "myapp" `
                                        -publisher "Freddy Kristiansen" `
