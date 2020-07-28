@@ -16,4 +16,5 @@ A cheat sheets collection I made.
   * [Business Central Features Availability](https://ricardopaiva.github.io/cheatsheet/business-central-features-availability/)
 
 Last updated: 2020-07-27
-Website: https://ricardomoinhos.com/blog
+
+My website: https://ricardomoinhos.com/blog

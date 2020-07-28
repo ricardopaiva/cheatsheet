@@ -197,11 +197,27 @@ Stop-BcContainer -containerName "BC140CU4W1"
 
 ### Get installed extension list
 
+Get all installed extensions in a container.
+
 Get-BcContainerAppInfo -containerName "<container name>"
 
 ```
 Get-BcContainerAppInfo -containerName "test"
 ```
+
+Get the name of all installed extensions in a container.
+
+(Get-BcContainerAppInfo -containerName "<container name>").Name
+
+```
+(Get-BcContainerAppInfo -containerName "test").Name
+```
+
+Other parameters:
+
+* -tenant => specifies the tenant from which you want to get the app info;
+* -symbolsOnly => specifies whether you only want apps, which are of packagetype SymbolsOnly (Specifying SymbolsOnly ignores the tenant parameter);
+* -sort => Specifies how (if any) you want to sort apps based on dependencies to other apps;
 
 ### Publish an extension
 
@@ -222,7 +238,7 @@ If you only publish the app, you can use **Sync-BcContainerApp** and **Install-B
 
 ### Unpublish an extension
 
-Unpublish-BcContainerApp -containerName "<container name>" -appName "<app name>"
+Unpublish-BcContainerApp -containerName "<container name>" -appName "<app name>" -tenant <tentant>
 
 Other parameters:
 
@@ -231,7 +247,7 @@ Other parameters:
 * -version => the version, used when there are multiple versions of the app installed;
 
 ```
-Unpublish-BcContainerApp -containerName "test" -appName "MyApp" -uninstall
+Unpublish-BcContainerApp -containerName "test" -appName "MyApp" -uninstall -tenant default
 ```
 
 ### Clean up the extension before publishing
