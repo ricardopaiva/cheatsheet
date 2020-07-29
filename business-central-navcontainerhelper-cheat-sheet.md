@@ -260,7 +260,29 @@ Sync-BcContainerApp -containerName "<container name>" -appName "<app name>" -Mod
 Sync-BcContainerApp -containerName "test" -appName "MyApp" -Mode Clean
 ```
 
+
+
+## Events Logs
+
+**Get the Event log from a NAV/BC Container as an .evtx file**
+
+Get-BcContainerEventLog -containerName <containerName>
+
+```
+Get-BcContainerEventLog -containerName "test"
+```
+
+
+
 ## Other commands
+
+### Copy file from container to local machine
+
+Copy-FileFromNavContainer -containername <container name> -containerpath <container file path and name to copy> -localpath <local file path and name to copy to>
+
+```
+Copy-FileFromNavContainer -containername dynamicsbc154 -containerpath c:/configurationpackages/NAV15.4.W1.ENU.EXTENDED.rapidstart -localpath C:\temp\NAV15.4.W1.ENU.EXTENDED.rapidstart
+```
 
 ### Import objects to BC
 

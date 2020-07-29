@@ -18,7 +18,7 @@ nav_order: 2
 
 ### Containers
 
-**List Containers** 
+#### List Containers
 
 * docker container ls
   
@@ -35,31 +35,31 @@ nav_order: 2
   
   Lists all containers
 
-**Start Containers**
+#### Start Containers
 
 *  docker start <container id>
 
-**Stop Containers**
+#### Stop Containers
 
 * docker stop <container id>  
 
-**Remove Containers**
+#### Remove Containers
 
   * docker rm <container id>  
 
-**Rename Containers**
+#### Rename Containers
 
   * docker rename <old container id or name>  <new container name>
 
-**Get container info**
+#### Get container info
 
 * docker inspect <docker id>
 
-**Get container ip address**
+#### Get container ip address
 
 * docker inspect -f "{{range .NetworkSettings.Networks}}{{ ".IPAddress" }}{{end}}" <docker id>
 
-**Copy a local file to the container**
+#### Copy a local file to the container
 
 * docker cp <local file fullpath> "<container name>:<filename to be created in container>"
 
@@ -69,25 +69,27 @@ nav_order: 2
 
 ### Images
 
-**Search Image with name**
+#### Search Image with name
 
 * docker search busybox
 
-**Restart Container (i.e., if unhealthy)**
+#### Restart Container (i.e., if unhealthy)
 
 * docker restart <docker id>
 
-**List Images**  
+#### List Images
 
 * docker images
 
-**Remove Images**   
+#### Remove Images
 
 * docker rmi <image id>
 
 ### Networking
 
-**Create a bridge (nat) network to connect containers to host** (note that this network must have access to the internet and the dns server when defined otherwise you may have network issues)
+#### Create a bridge (nat) network to connect containers to host
+
+(Note that this network must have access to the internet and the dns server when defined otherwise you may have network issues)
 
 * docker network create -d nat <nat name> --subnet <subnet ip> --gateway <gateway ip>
 
@@ -95,7 +97,7 @@ nav_order: 2
 docker network create -d nat dockernat --subnet 172.16.1.0/16 --gateway 172.16.1.1
 ```
 
-**Create container in created nat network**
+#### Create container in created nat network
 
 Use the following parameters in docker run command:
 
@@ -111,7 +113,7 @@ Use the following parameters in docker run command:
   --network dockernat --ip 172.16.1.2
   ```
 
-**Connect docker container to a recently created nat network**
+#### Connect docker container to a recently created nat network
 
 * docker network connect -ip <container ip> <nat network> <container name>
 
@@ -143,7 +145,7 @@ Note 4: if you're having issues with Docker resolving DNS addresses, take a look
 
 Note: First create a Powershell session to the container (docker exec -it  <container_id> powershell)
 
-**Get the latest application logs from the container**
+#### Get the latest application logs from the container
 
 Get-Eventlog -newest <top x> <type>
 
@@ -151,7 +153,7 @@ Get-Eventlog -newest <top x> <type>
 Get-Eventlog -newest 20 application
 ```
 
-**Get the message for each log**
+#### Get the message for each log
 
 (Get-Eventlog -index <index> <type>).message
 
@@ -165,15 +167,7 @@ Alternative: Check this link: https://www.hougaard.com/get-an-eventlog-from-a-do
 
 ### Other
 
-**Copy file from container to local machine**
-
-Copy-FileFromNavContainer -containername <container name> -containerpath <container file path and name to copy> -localpath <local file path and name to copy to>
-
-```
-Copy-FileFromNavContainer -containername dynamicsbc154 -containerpath c:/configurationpackages/NAV15.4.W1.ENU.EXTENDED.rapidstart -localpath C:\temp\NAV15.4.W1.ENU.EXTENDED.rapidstart
-```
-
-**Open new Powershell window in Container**
+#### Open new Powershell window in Container
 
 docker exec -it <container id> powershell
 
@@ -181,7 +175,7 @@ docker exec -it <container id> powershell
 docker exec -it 8e0967a5b798 powershell
 ```
 
-**Connect to SQL from Powershell window in Container**
+#### Connect to SQL from Powershell window in Container
 
 SQL user = sa
 
@@ -191,7 +185,7 @@ SQL password = <same password used in container for the NAVUserPassword>
 sqlcmd
 ```
 
-**Import bacpac file using sqlpackage**
+#### Import bacpac file using sqlpackage
 
 sqlpackage.exe /a:Import /sf:<bacpac file path>.bacpac /tsn:<TargetServerName> /tdn:<targetdatabaseName> /tu:<TargerUsername> /tp:<TargetPassword>
 
@@ -199,7 +193,7 @@ sqlpackage.exe /a:Import /sf:<bacpac file path>.bacpac /tsn:<TargetServerName> /
 sqlpackage.exe /a:Import /sf:C:\Temp\NAVBC_V14_CU2_SS.bacpac /tsn:192.168.187.101 /tdn:CRONUS /tu:<username> /tp:<Password>
 ```
 
-**Create User Login in Docker SQL, from Powershell window in Container**
+#### Create User Login in Docker SQL, from Powershell window in Container
 
 ```
 CREATE LOGIN <loginname> WITH PASSWORD = 'WRITE PASSWORD HERE';
@@ -222,10 +216,25 @@ ALTER ROLE db_datareader ADD MEMBER <loginname>
 GO
 ```
 
+#### Expose new port to existing container
+
+* Shutdown Docker Engine.
+
+* Find your container path in C:\ProgramData\Docker\containers. Your docker id should match the first characters of one of the folders.
+
+* Edit **config.v2.json** file, adding the new port to **ExposedPorts** section.
+
+**Example**
+
+* **Before**: "ExposedPorts":{"1433/tcp":{},"443/tcp":{},"7045/tcp":{},"7046/tcp":{},"7047/tcp":{},"7048/tcp":{},"7049/tcp":{},"80/tcp":{},"8080/tcp":{}}
+* **After**: "ExposedPorts":{"1433/tcp":{},"443/tcp":{},"7045/tcp":{},"7046/tcp":{},"7047/tcp":{},"7048/tcp":{},"7049/tcp":{},"80/tcp":{},"8080/tcp":{},**"4032/tcp":{}**}
+
+**Note:** It's possible to do the same for Port Binding. Port Binding is in **hostconfig.json** file.
+
 ## Troubleshooting
 
 It should be possible to call a rest method from the container to a host url but not if you're publishing from Visual Studio to IISExpress. Publish it and run it in a IIS website instead.
 
 The host address is 'host.docker.internal', which automatically translates to the correct ip.
 
-Invoke-RestMethod 'http://host.docker.internal:49000//api/guid''
+Invoke-RestMethod 'http://host.docker.internal:49000/api/guid''
