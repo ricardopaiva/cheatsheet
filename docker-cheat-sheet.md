@@ -216,7 +216,7 @@ ALTER ROLE db_datareader ADD MEMBER <loginname>
 GO
 ```
 
-#### Expose new port to existing container
+#### Expose new port from existing container
 
 * Shutdown Docker Engine.
 
@@ -229,7 +229,7 @@ GO
 * **Before**: "ExposedPorts":{"1433/tcp":{},"443/tcp":{},"7045/tcp":{},"7046/tcp":{},"7047/tcp":{},"7048/tcp":{},"7049/tcp":{},"80/tcp":{},"8080/tcp":{}}
 * **After**: "ExposedPorts":{"1433/tcp":{},"443/tcp":{},"7045/tcp":{},"7046/tcp":{},"7047/tcp":{},"7048/tcp":{},"7049/tcp":{},"80/tcp":{},"8080/tcp":{},**"4032/tcp":{}**}
 
-**Note:** It's possible to do the same for Port Binding. Port Binding is in **hostconfig.json** file.
+**Note:** It's possible to do the same for Port Binding. Port Binding is in **hostconfig.json** file. Syntax: "PortBindings":{"4032/tcp":[{"HostIp":"","HostPort":"4032"}]}
 
 ## Troubleshooting
 
