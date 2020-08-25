@@ -193,6 +193,17 @@ Stop-BcContainer -containerName "<container name>"
 Stop-BcContainer -containerName "BC140CU4W1"
 ```
 
+### Import NAV/BC License
+
+Import a license in the container.
+
+Import-BcContainerLicense -containerName "<container name>" -licenseFile "<license path>" -restart
+
+```
+Import-BcContainerLicense -containerName test -licenseFile c:\temp\mylicense.flf -restart
+Import-BcContainerLicense -containerName test -licenseFile "https://www.dropbox.com/s/fhwfwjfjwhff/license.flf?dl=1"
+```
+
 ## Extension Management
 
 ### Get installed extension list
