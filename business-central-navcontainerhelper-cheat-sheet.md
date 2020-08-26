@@ -238,11 +238,12 @@ Optional parameters:
 
 * -sync => synchronized the app;
 * -install => installs the app;
+* -scope => Global / Tenant;
 
-The below script will **publish**, **sync** and **install** the app in c:\temp\my.app in the NAV container called test.
+The below script will **publish**, **sync** and **install** the app in c:\temp\my.app in the NAV container called test. Will install the app in tenant scope as vs code does.
 
 ```
-Publish-BcContainerApp -containerName "test" -appFile "c:\temp\my.app" -skipVerification -sync -install
+Publish-BcContainerApp -containerName "test" -appFile "c:\temp\my.app" -skipVerification -sync -install -scope Tenant
 ```
 
 If you only publish the app, you can use **Sync-BcContainerApp** and **Install-BcContainerApp** to sync and install the app later.
