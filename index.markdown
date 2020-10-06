@@ -18,4 +18,4 @@ A cheat sheets collection I made.
 
 Last updated: 2020-10-06
 
-My website: https://ricardomoinhos.com/blog
+My website: [https://ricardomoinhos.com/blog](https://ricardomoinhos.com/blog)
