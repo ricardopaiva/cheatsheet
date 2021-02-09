@@ -1,5 +1,5 @@
 ---
-title: NAVContainerHelper
+title: BCContainerHelper
 nav_order: 4
 ---
 
@@ -15,36 +15,36 @@ nav_order: 4
 
 ---
 
-## NAVContainerHelper Installation
+## BCContainerHelper Installation
 
-### Install NAVContainerHelper module
-
-```powershell
-install-module navcontainerhelper (-force)
-```
-
-### Uninstall NAVContainerHelper module
+### Install BCContainerHelper module
 
 ```powershell
-uninstall-module navcontainerhelper
+install-module bccontainerhelper (-force)
 ```
 
-### NAVContainerHelper module path
+### Uninstall BCContainerHelper module
 
-```
-C:\Program Files\WindowsPowerShell\Modules\navcontainerhelper\<version>
-```
-
-### Get NAVContainerHelper installed module version
-
-```
-Get-InstalledModule navcontainerhelper
+```powershell
+uninstall-module bccontainerhelper
 ```
 
-### Update NAVContainerHelper module
+### BCContainerHelper module path
 
 ```
-Update-Module navcontainerhelper
+C:\Program Files\WindowsPowerShell\Modules\bccontainerhelper\<version>
+```
+
+### Get BCContainerHelper installed module version
+
+```
+Get-InstalledModule bccontainerhelper
+```
+
+### Update BCContainerHelper module
+
+```
+Update-Module bccontainerhelper
 ```
 
 ## Dynamics 365 Business Central Installation
@@ -290,10 +290,10 @@ Get-BcContainerEventLog -containerName "test"
 
 ### Copy file from container to local machine
 
-Copy-FileFromNavContainer -containername <container name> -containerpath <container file path and name to copy> -localpath <local file path and name to copy to>
+Copy-FileFromBcContainer -containername <container name> -containerpath <container file path and name to copy> -localpath <local file path and name to copy to>
 
 ```
-Copy-FileFromNavContainer -containername dynamicsbc154 -containerpath c:/configurationpackages/NAV15.4.W1.ENU.EXTENDED.rapidstart -localpath C:\temp\NAV15.4.W1.ENU.EXTENDED.rapidstart
+Copy-FileFromBcContainer -containername dynamicsbc154 -containerpath c:/configurationpackages/NAV15.4.W1.ENU.EXTENDED.rapidstart -localpath C:\temp\NAV15.4.W1.ENU.EXTENDED.rapidstart
 ```
 
 ### Import objects to BC
@@ -320,7 +320,7 @@ Create-AlProjectFolderFromBcContainer -container <containerName> -alProjectFolde
 Note: When using the -useBaseLine flag, the -includeAL flag must be set when creating the container.
 
 ```
-$alProjectFolder = "C:\ProgramData\NavContainerHelper\AL\BaseApp"
+$alProjectFolder = "C:\ProgramData\BcContainerHelper\AL\BaseApp"
 Create-AlProjectFolderFromBcContainer -containerName alContainer `
                                        -alProjectFolder $alProjectFolder `
                                        -name "myapp" `
@@ -334,7 +334,7 @@ More info: [Create-AlProjectFolderFromNavContainer](https://github.com/microsoft
 
 ### Docker Local Shared Folder
 
-C:\ProgramData\NavContainerHelper\Extensions\ <container name>\my
+C:\ProgramData\BcContainerHelper\Extensions\ <container name>\my
 
 Folder inside container: C:\run\my
 
