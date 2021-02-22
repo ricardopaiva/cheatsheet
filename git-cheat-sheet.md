@@ -71,3 +71,22 @@ git log -all -- "c:\repo\"
 ```
 git log --follow -- "c:\repo\file.cs"
 ```
+
+#### Archive from commit history
+
+* Archive specific commit to a zip file
+  * git archive -o <output path + filename> <commit>
+
+```console
+git archive -o "C:\repo\archive.zip" 53da8a72f08a8c9dc862b7683b07d9ea965ae91a
+```
+
+* Archive specific commit and specific subfolder to a zip file
+  * git archive -o <output path + filename> <commit> <subfolder path in current dir>
+
+```
+git archive -o "C:\repo\archive.zip" 53da8a72f08a8c9dc862b7683b07d9ea965ae91a "app"
+```
+
+
+
