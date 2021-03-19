@@ -90,3 +90,12 @@ git archive -o "C:\repo\archive.zip" 53da8a72f08a8c9dc862b7683b07d9ea965ae91a "a
 
 
 
+## Other commands
+
+#### Updating Git
+
+* Update Git in Windows
+
+```console
+git update-git-for-windows
+```
