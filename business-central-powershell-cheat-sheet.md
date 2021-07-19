@@ -81,6 +81,18 @@ Unpublish-NAVApp -ServerInstance <server instance> -Name <extension name> -Versi
 Unpublish-NAVApp -ServerInstance $serverInstance -Name $extensionName -Version $extensionVersion 
 ```
 
+## Users Management
+
+### Add a new Windows Account user 
+
+New-NavServerUser -WindowsAccount <windows account> -ServerInstance <server instance>
+New-NavServerUserPermissionSet -WindowsAccount <windows account> -ServerInstance <server instance> -PermissionSetId <permission set id>
+
+```
+New-NavServerUser -WindowsAccount 'domain.local\ricardo' -ServerInstance $serverInstance
+New-NavServerUserPermissionSet -WindowsAccount 'domain.local\ricardo' -ServerInstance $serverInstance -PermissionSetId SUPER
+```
+
 ## Objects Exporting
 
 ### Export all objects from NAV Database to text file ####
