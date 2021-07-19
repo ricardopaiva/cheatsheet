@@ -22,3 +22,6 @@ end
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 gem "kramdown", ">=2.3.1"  # for security reasons.
+gem "addressable", ">= 2.8.0"  # for security reasons.
+gem "rexml", ">= 3.2.5"  # for security reasons.
+gem "nokogiri", ">= 1.11.4"  # for security reasons.
