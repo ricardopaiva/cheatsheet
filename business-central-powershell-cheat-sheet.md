@@ -95,19 +95,22 @@ New-NavServerUserPermissionSet -WindowsAccount 'domain.local\ricardo' -ServerIns
 
 ## Web Server Instance Management
 
-### Add a new web server instance 
+### Get web server instances
+
+Get-NAVWebServerInstance
+
+### Add a new web server instance
 
 New-NAVWebServerInstance -WebServerInstance <new web server instance name> -Server <BC Server> -ServerInstance <server instance>
 
 - Change *WebServerInstance* to the name that you want to give the virtual directory for the web server instance. This name will become part of the URL for the Microsoft Dynamics BC Web client application, for example, [http://MyWebServer:8080/WebServerInstance/WebClient](http://mywebserver:8080/WebServerInstance/WebClient). 
-- Change *BCServer* to the name of the computer that is running the Microsoft Dynamics BC Server to which you want to connect.
+- Change *BCServer* to the name of the computer that is running the Microsoft Dynamics BC Server to which you want to connect (ex. localhost)
 - Change *ServerInstance* to the name of the instance on the Microsoft Dynamics BC Server.
 
 ```
 New-NAVWebServerInstance -WebServerInstance $newWebServerInstanceName -Server $BCServer -ServerInstance $serverInstance
+New-NAVWebServerInstance -WebServerInstance bc-w1-15 -Server localhost -ServerInstance bc-w1-15
 ```
-
-## 
 
 ## Objects Exporting
 
