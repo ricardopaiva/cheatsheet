@@ -23,6 +23,6 @@ Keyboard shortcut to manually show the current file in Explorer:
 
 Search for **workbench.files.action.showActiveFileInExplorer**
 
-Setup shortcut. Eg. **Ctrl+Alt+E**.
+Setup shortcut. Eg. **Ctrl+Alt+A**.
 
-{ "key": "ctrl+alt+e", "command": "workbench.files.action.showActiveFileInExplorer" }
+{ "key": "ctrl+alt+a", "command": "workbench.files.action.showActiveFileInExplorer" }
