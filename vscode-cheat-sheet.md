@@ -1,6 +1,6 @@
 ---
-title: Business Central Versions Naming
-nav_order: 6
+title: VS Code
+nav_order: 9
 ---
 
 # {{ page.title }}
