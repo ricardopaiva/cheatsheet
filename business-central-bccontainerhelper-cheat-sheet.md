@@ -8,10 +8,11 @@ nav_order: 4
 {: .no_toc }
 
 ## Table of contents
+
 {: .no_toc .text-delta }
 
 1. TOC
-{:toc}
+   {:toc}
 
 ---
 
@@ -55,8 +56,6 @@ Update-Module bccontainerhelper
 
 $artifactUrl = Get-BCArtifactUrl -version <version filter> -country <country code> -select <> -type <onprem or sandbox> 
 
-
-
 - **storageAccount** (bcinsider or **bcartifacts**). The storage account determines where to get the artifacts. bcartifacts is the storage account, which contains all public artifacts with Business Central and NAV.
 - **type** (onprem or **sandbox** - default is blank = sandbox) determines whether to get onprem artifacts (shipped builds) or sandbox artifacts (Saas builds). If you are looking for a build, which matches your saas version, you need to use sandbox.
 - **version** (default is blank = all versions) is the version you are filtering for. You can specify a full version number or a partial version number. The function will try to match your request.
@@ -67,9 +66,6 @@ $artifactUrl = Get-BCArtifactUrl -version <version filter> -country <country cod
   - **closest** requires you to supply a full version number and the function will return the closest version (where Major and Minor version MUST match).
   - **secondToLastMajor** is used in CI/CD scenarios to identify next minor release.
 - **sasToken** is the shared access signature token to use when requesting artifacts from a secured storage account (like bcinsider).
-
-
-
 
 ```
 $artifactUrl = Get-BCArtifactUrl -version 15.2 -country us  # D365 BC 2019 Release Wave 2 (V15), Update 15.2, US
@@ -129,7 +125,6 @@ New-BcContainer `
     -auth NavUserPassword `
     -Verbose `
     -licenseFile $licenseFilePath
-
 ```
 
 ### Download and install certificate
@@ -141,7 +136,6 @@ After the container creation you get the url to the certificate:
 > http://bccontainer:8080/certificate.cer
 
 To download the container and import to the Trusted Root store do:
-
 
 ```
 ### Download the certificate from container
@@ -272,8 +266,6 @@ Sync-BcContainerApp -containerName "<container name>" -appName "<app name>" -Mod
 Sync-BcContainerApp -containerName "test" -appName "MyApp" -Mode Clean
 ```
 
-
-
 ## Events Logs
 
 **Get the Event log from a NAV/BC Container as an .evtx file**
@@ -284,7 +276,20 @@ Get-BcContainerEventLog -containerName <containerName>
 Get-BcContainerEventLog -containerName "test"
 ```
 
+## Unit Tests
 
+### Import Test Toolkit to existing container
+
+Import-TestToolkitToBcContainer -containername <container name> -includeTestLibrariesOnly -includePerformanceToolkit
+
+Other parameters:
+
+* -includeTestFrameworkOnly => Only import TestFramework Apps (do not import Test Apps or Test Library apps);
+* -testToolkitCountry => Only import TestToolkit objects for a specific country;
+
+```
+Import-TestToolkitToBcContainer -containername "test" -includeTestLibrariesOnly -includePerformanceToolkit
+```
 
 ## Other commands
 
@@ -293,7 +298,7 @@ Get-BcContainerEventLog -containerName "test"
 Copy-FileFromBcContainer -containername <container name> -containerpath <container file path and name to copy> -localpath <local file path and name to copy to>
 
 ```
-Copy-FileFromBcContainer -containername dynamicsbc154 -containerpath c:/configurationpackages/NAV15.4.W1.ENU.EXTENDED.rapidstart -localpath C:\temp\NAV15.4.W1.ENU.EXTENDED.rapidstart
+Copy-FileFromBcContainer -containername "test" -containerpath c:/configurationpackages/NAV15.4.W1.ENU.EXTENDED.rapidstart -localpath C:\temp\NAV15.4.W1.ENU.EXTENDED.rapidstart
 ```
 
 ### Import objects to BC
@@ -347,6 +352,6 @@ Folder inside container: C:\run\my
 
 ```powershell
 New-BCContainer -accept_eula -containerName 'BC140CU4W1' `
-				-imageName 'mcr.microsoft.com/businesscentral/onprem:14.5.35970.0-w1-ltsc2019' `
+                -imageName 'mcr.microsoft.com/businesscentral/onprem:14.5.35970.0-w1-ltsc2019' `
                 -updateHosts
 ```
