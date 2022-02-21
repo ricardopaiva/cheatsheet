@@ -17,6 +17,6 @@ A cheat sheets collection I made.
 * [Git](https://ricardopaiva.github.io/cheatsheet/git-cheat-sheet/)
 * [VSCode](https://ricardopaiva.github.io/cheatsheet/vscode-cheat-sheet/)
 
-Last updated: 2022-02-04
+Last updated: 2022-02-21
 
 My website: [https://ricardomoinhos.com/blog](https://ricardomoinhos.com/blog)
