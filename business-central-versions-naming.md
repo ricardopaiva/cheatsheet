@@ -19,4 +19,4 @@ nav_order: 6
 | Dynamics 365 Business Central 2021 Release Wave 2 |                      | V19     | 8.0     | October 2021 | April 2023       |
 | Dynamics 365 Business Central 2022 Release Wave 1 |                      | V20     | 9.0     | April 2022   | October 2023     |
 
-Modern Lifecycle Policy: [Software lifecycle policy and on-premises updates - Business Central | Microsoft Docs](https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/terms/lifecycle-policy-on-premises)
+Modern Lifecycle Policy: [Software lifecycle policy and on-premises updates - Business Central - Microsoft Docs](https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/terms/lifecycle-policy-on-premises)
