@@ -61,3 +61,13 @@ Get-Module
 ```
 
 More info and examples: [Get-Module (Microsoft.PowerShell.Core) - PowerShell | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-module?view=powershell-7.2)
+
+### Load a module
+
+Adds modules to the current session.
+
+```powershell
+Install-Module -Name <module name>
+```
+
+More info and examples: [Import-Module (Microsoft.PowerShell.Core) - PowerShell | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/import-module?view=powershell-7.2)
