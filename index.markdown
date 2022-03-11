@@ -16,7 +16,8 @@ A cheat sheets collection I made.
 * [Business Central Features Availability](https://ricardopaiva.github.io/cheatsheet/business-central-features-availability/)
 * [Git](https://ricardopaiva.github.io/cheatsheet/git-cheat-sheet/)
 * [VSCode](https://ricardopaiva.github.io/cheatsheet/vscode-cheat-sheet/)
+* [Powershell](https://ricardopaiva.github.io/cheatsheet/powershell-cheat-sheet/)
 
-Last updated: 2022-02-25
+Last updated: 2022-03-11
 
 My website: [https://ricardomoinhos.com/blog](https://ricardomoinhos.com/blog)
