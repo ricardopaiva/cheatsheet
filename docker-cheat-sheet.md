@@ -139,7 +139,41 @@ Note 3: Configure the firewall with these rules:
 
 Note 4: if you're having issues with Docker resolving DNS addresses, take a look at this url: http://www.robertbird.co.uk/development/docker-networking-tips-and-tricks
 
+### Logs
 
+#### Continuous view log output
+
+docker logs --follow <container id>
+
+```
+docker logs --follow container_id
+```
+
+#### Display only the latest lines
+
+docker logs --tail <nr of lines> <container id>
+
+```
+docker logs --tail 100 container_id
+```
+
+#### Display logs until a specific point in time
+
+docker logs --follow **--until=<time>** <container id>
+
+```
+docker logs --follow --until=10s container_id
+```
+
+#### Display logs from a specific point in time
+
+docker logs --follow **--since=<YYYY-MM-DDTHH:MM:SS>** <container id>
+
+```
+docker logs --follow --since=2019-03-02 container_id
+```
+
+More info: [docker logs | Docker Documentation](https://docs.docker.com/engine/reference/commandline/logs/)
 
 ### Events Logs
 
