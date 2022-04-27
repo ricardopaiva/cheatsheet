@@ -173,6 +173,14 @@ docker logs --follow **--since=<YYYY-MM-DDTHH:MM:SS>** <container id>
 docker logs --follow --since=2019-03-02 container_id
 ```
 
+#### Get log file location path
+
+docker inspect <container id> | grep LogPath
+
+```
+docker inspect container_id | grep LogPath
+```
+
 More info: [docker logs | Docker Documentation](https://docs.docker.com/engine/reference/commandline/logs/)
 
 ### Events Logs
