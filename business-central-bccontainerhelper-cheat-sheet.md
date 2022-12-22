@@ -266,6 +266,31 @@ Sync-BcContainerApp -containerName "<container name>" -appName "<app name>" -Mod
 Sync-BcContainerApp -containerName "test" -appName "MyApp" -Mode Clean
 ```
 
+## Users Management
+
+### Create new user in container
+
+Creates a new user in a container with NavUserPassword credentials
+
+New-BcContainerBcUser -containerName "<container name>" -Credential $credential -PermissionSetId "SUPER"
+
+Other parameters:
+
+* -ChangePasswordAtNextLogOn => forces the user to change the password on logon. Default value: true;
+
+```
+$credential = New-Object pscredential 'admin', (ConvertTo-SecureString -String 'P@ssword1' -AsPlainText -Force)
+New-BcContainerBcUser-containerName "test" -Credential $credential -PermissionSetId "SUPER"
+```
+
+Creates a new user in a container with Windows authentication
+
+New-BcContainerBcUser -containerName "<container name>" -WindowsAccount "<windows account>" -PermissionSetId "SUPER"
+
+```
+New-BcContainerBcUser -containerName "test" -WindowsAccount "<domain\username>" -PermissionSetId "SUPER"
+```
+
 ## Events Logs
 
 **Get the Event log from a NAV/BC Container as an .evtx file**
