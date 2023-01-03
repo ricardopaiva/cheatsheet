@@ -93,6 +93,18 @@ New-NavServerUser -WindowsAccount 'domain.local\ricardo' -ServerInstance $server
 New-NavServerUserPermissionSet -WindowsAccount 'domain.local\ricardo' -ServerInstance $serverInstance -PermissionSetId SUPER
 ```
 
+## License Management
+
+### Import a license
+
+Imports a license file into a Business Central database
+
+Import-NAVServerLicense <server instance> -LicenseData ([Byte[]]$(Get-Content -Path "<license file>" -Encoding Byte))
+
+```
+Import-NAVServerLicense $serverInstance -LicenseData ([Byte[]]$(Get-Content -Path "$licenseFilePath" -Encoding Byte))
+```
+
 ## Web Server Instance Management
 
 ### Get web server instances
