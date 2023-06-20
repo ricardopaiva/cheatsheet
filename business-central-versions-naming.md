@@ -18,6 +18,8 @@ nav_order: 6
 | Dynamics 365 Business Central 2021 Release Wave 1 |                      | V18     | 7.0     | April 2021   | October 2022     |
 | Dynamics 365 Business Central 2021 Release Wave 2 |                      | V19     | 8.0     | October 2021 | April 2023       |
 | Dynamics 365 Business Central 2022 Release Wave 1 |                      | V20     | 9.0     | April 2022   | October 2023     |
+| Dynamics 365 Business Central 2022 Release Wave 2 |                      | V21     | 10.0    | October 2022 | April 2024       | 
+| Dynamics 365 Business Central 2022 Release Wave 2 |                      | V22     | 11.0    | April 2023   | October 2024     | 
 
 More info:
 
