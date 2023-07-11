@@ -105,6 +105,32 @@ Import-NAVServerLicense <server instance> -LicenseData ([Byte[]]$(Get-Content -P
 Import-NAVServerLicense $serverInstance -LicenseData ([Byte[]]$(Get-Content -Path "$licenseFilePath" -Encoding Byte))
 ```
 
+## Business Central Server Instance Management
+
+### Update configuration / settings
+
+Configures settings for a Business Central Server instance.
+
+Values are written directly to the configuration file for the instance (CustomSettings.config). New setting values do not take effect until you restart the server instance.
+
+Set-NAVServerConfiguration -ServerInstance <bc server instance name> -KeyName <key name> -ServerInstance <server instance>
+
+- Change *serverInstanceName* to the name of the instance on the Microsoft Dynamics BC Server instance.
+- Change *keyName* to the configuration key name to be configured. For more info on the available keys check CustomSettings.config file in "C:\Program Files\Microsoft Dynamics 365 Business Central\<version>\Service\CustomSettings.config". 
+- Change *keyValue* to the value to be set.
+- *(Optional)* Change *applyTo* to the configuration mode to be used:
+  - *ConfigFile* or *0* -> *Default*: Saves the change to the configuration file of the server instance. The change will not take effect until the server instance is restarted.
+  - *Memory* or *1* -> The setting change is just applied to the server instance's current setting state. This is only applicable for server settings which support dynamic updating. If the specified setting is not dynamically updateable this command will fail.
+  - *All* or *2* -> Applies the change to the server instance's current setting state (in memory) and to the configuration file. This is only applicable for server settings that support dynamic updating. If the setting does not support dynamic updating, the cmdlet will fail with an error. The change will not be applied to the current session or the configuration file.
+
+
+```
+Set-NAVServerConfiguration -ServerInstance $serverInstanceName -KeyName $keyName -KeyValue $keyValue -ApplyTo $applyTo
+Set-NAVServerConfiguration -ServerInstance bc-w1-22 -KeyName DatabaseServer -KeyValue DatabaseServer.Domain.Com
+```
+
+
+
 ## Web Server Instance Management
 
 ### Get web server instances
