@@ -280,7 +280,7 @@ Other parameters:
 
 ```
 $credential = New-Object pscredential 'admin', (ConvertTo-SecureString -String 'P@ssword1' -AsPlainText -Force)
-New-BcContainerBcUser-containerName "test" -Credential $credential -PermissionSetId "SUPER"
+New-BcContainerBcUser -containerName "test" -Credential $credential -PermissionSetId "SUPER"
 ```
 
 Creates a new user in a container with Windows authentication
