@@ -101,7 +101,7 @@ More info: https://freddysblog.com/2020/06/25/working-with-artifacts/
 
 $containername = 'bcsandbox154qa'
 $artifactUrl = Get-BCArtifactUrl -version 15 -country us -select Latest  # D365 BC 2019 Release Wave 2 (V15), Latest update, US
-$licenseFilePath = 'C:\enChoice\Business Central\Licenses\V15\5259612.flf'
+$licenseFilePath = 'C:\DEV\Business Central\Licenses\V15\5259612.flf'
 
 New-BcContainer -accept_eula -containerName <container name> -artifactUrl $artifactUrl -useSSL -updateHosts -auth <Authentication Mode> -Verbose -additionalParameters @("--network nat", "--ip 172.28.80.5") -licenseFile <license path> 
 
