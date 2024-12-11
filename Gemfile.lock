@@ -280,7 +280,7 @@ DEPENDENCIES
   addressable (>= 2.8.0)
   github-pages
   just-the-docs
-  kramdown (>= 2.3.1)
+  kramdown (>= 2.4.0)
   nokogiri (>= 1.11.4)
   rexml (>= 3.2.5)
   tzinfo (~> 1.2)
