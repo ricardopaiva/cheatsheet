@@ -10,6 +10,7 @@ nav_order: 6
 
 | Name                                              | Alternative Name     | Version | Runtime | Release Date |
 | ------------------------------------------------- | -------------------- | ------- | ------- | ------------ |
+| Dynamics 365 Business Central 2025 Release Wave 1 |                      | V26     | 15.0    | April 2025   |
 | Dynamics 365 Business Central 2024 Release Wave 2 |                      | V25     | 14.0    | October 2024 |
 | Dynamics 365 Business Central 2024 Release Wave 1 |                      | V24     | 13.0    | April 2024   |
 | Dynamics 365 Business Central 2023 Release Wave 2 |                      | V23     | 12.0    | October 2023 |
