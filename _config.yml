@@ -31,3 +31,15 @@ permalink: pretty
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
+
+# Callouts
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: purple
+  important:
+    title: Important
+    color: blue

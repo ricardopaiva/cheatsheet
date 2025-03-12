@@ -18,9 +18,15 @@ nav_order: 3
 
 ### Import Modules
 
+{: .important }
+> When applicable, fix the version in the path. For version 25, the path should be
+> C:\Program Files\Microsoft Dynamics 365 Business Central\\**250**\\Service
+
 #### Version 14
 
+```
 Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\140\Service\NAVAdminTool.ps1" -force
+```
 
 {: .note }
 > The NAVAdminTool.ps1 script loads both Microsoft.Dynamics.Nav.Management.dll and Microsoft.Dynamics.Nav.Apps.Management.dll libraries. If NAVAdminTool.ps1 fails to load for some reason, you can always try to load the libraries as follows:
@@ -28,27 +34,29 @@ Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\140\Serv
 > Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\140\Service\Microsoft.Dynamics.Nav.Management.dll" -force
 > Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\140\Service\Microsoft.Dynamics.Nav.Apps.Management.dll" -force
 
+```
 Import-Module "C:\Program Files (x86)\Microsoft Dynamics 365 Business Central\140\RoleTailored Client\NAVModelTools.ps1" -force
+```
 
 #### Version 15 (up to 22)
 
+```
 Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\150\Service\Microsoft.Dynamics.Nav.Management.dll" -force
-
 Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\150\Service\Microsoft.Dynamics.Nav.Apps.Management.dll" -force
+```
 
 #### Version 23 onwards
 
-Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\\*230*\\Service\Management\Microsoft.Dynamics.Nav.Management.dll" -force
-
-Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\\*230*\\Service\Management\Microsoft.Dynamics.Nav.Apps.Management.dll" -force
+```
+Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\230\Service\Management\Microsoft.Dynamics.Nav.Management.dll" -force
+Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\230\Service\Management\Microsoft.Dynamics.Nav.Apps.Management.dll" -force
+```
 
 **Included cmdlets**
 
-Microsoft.Dynamics.Nav.Management.dll
-[Microsoft.BusinessCentral.Management Module - Dynamics NAV | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.dynamics.nav.management/?view=businesscentral-ps-25)
+[Microsoft.BusinessCentral.Management Module - Dynamics NAV - Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.dynamics.nav.management/?view=businesscentral-ps-25)
 
-Microsoft.Dynamics.Nav.Apps.Management.dll
-[Microsoft.BusinessCentral.Apps.Management Module - Dynamics NAV | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.dynamics.nav.apps.management/?view=businesscentral-ps-25)
+[Microsoft.BusinessCentral.Apps.Management Module - Dynamics NAV - Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.dynamics.nav.apps.management/?view=businesscentral-ps-25)
 
 
 
