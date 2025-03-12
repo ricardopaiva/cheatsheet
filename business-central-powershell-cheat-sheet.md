@@ -44,9 +44,11 @@ Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\\*230*\\
 
 **Included cmdlets**
 
-Microsoft.Dynamics.Nav.Management.dll - [Microsoft.BusinessCentral.Management Module - Dynamics NAV | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.dynamics.nav.management/?view=businesscentral-ps-25)
+Microsoft.Dynamics.Nav.Management.dll
+[Microsoft.BusinessCentral.Management Module - Dynamics NAV | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.dynamics.nav.management/?view=businesscentral-ps-25)
 
-Microsoft.Dynamics.Nav.Apps.Management.dll - [Microsoft.BusinessCentral.Apps.Management Module - Dynamics NAV | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.dynamics.nav.apps.management/?view=businesscentral-ps-25)
+Microsoft.Dynamics.Nav.Apps.Management.dll
+[Microsoft.BusinessCentral.Apps.Management Module - Dynamics NAV | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.dynamics.nav.apps.management/?view=businesscentral-ps-25)
 
 
 
