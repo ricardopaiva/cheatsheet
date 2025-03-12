@@ -22,13 +22,11 @@ nav_order: 3
 
 Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\140\Service\NAVAdminTool.ps1" -force
 
-```
 {: .note }
-The NAVAdminTool.ps1 script loads both Microsoft.Dynamics.Nav.Management.dll and Microsoft.Dynamics.Nav.Apps.Management.dll libraries. If NAVAdminTool.ps1 fails to load for some reason, you can always try to load the libraries as follows:
-
-Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\140\Service\Microsoft.Dynamics.Nav.Management.dll" -force
-Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\140\Service\Microsoft.Dynamics.Nav.Apps.Management.dll" -force
-```
+> The NAVAdminTool.ps1 script loads both Microsoft.Dynamics.Nav.Management.dll and Microsoft.Dynamics.Nav.Apps.Management.dll libraries. If NAVAdminTool.ps1 fails to load for some reason, you can always try to load the libraries as follows:
+> 
+> Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\140\Service\Microsoft.Dynamics.Nav.Management.dll" -force
+> Import-Module "C:\Program Files\Microsoft Dynamics 365 Business Central\140\Service\Microsoft.Dynamics.Nav.Apps.Management.dll" -force
 
 Import-Module "C:\Program Files (x86)\Microsoft Dynamics 365 Business Central\140\RoleTailored Client\NAVModelTools.ps1" -force
 
