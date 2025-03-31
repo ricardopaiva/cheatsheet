@@ -16,12 +16,17 @@ Last updated: 2025-03-20
 
 ---
 
+## Used Variables
+
+$InstanceName = "POS" # or POSMaster, for example
+
+
 
 ## Modules Management
 
 ### Importing BC cmdlets from a Update Service instance
 
-Import-Module (Get-BcModulePath -InstanceName <InstanceName> -Type <Module type>) -Global
+Import-Module (Get-BcModulePath -InstanceName &lt;InstanceName&gt; -Type &lt;Module type&gt;) -Global
 
 * Change *InstanceName* to match the **Update Service instance** (not the Business Central Service instance name)
 * *Module type*: **Management**, **Apps**
