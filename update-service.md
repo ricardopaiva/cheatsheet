@@ -18,8 +18,7 @@ Last updated: 2025-03-20
 
 ## Used Variables
 
-$InstanceName = "POS" # or POSMaster, for example
-
+$InstanceName = "POS" # or "POSMaster", for example
 
 
 ## Modules Management
@@ -33,7 +32,11 @@ Import-Module (Get-BcModulePath -InstanceName &lt;InstanceName&gt; -Type &lt;Mod
 
 Imports the Business Central Powershell modules from a Business Central installed using Update Service.
 
+Example:
+
 ```
+$InstanceName = 'POS'
+
 Import-Module LsSetupHelper\BusinessCentral\Management
 
 Import-Module (Get-BcModulePath -InstanceName $InstanceName -Type Management) -Global
