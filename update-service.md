@@ -65,9 +65,9 @@ $Arguments = @{
 $Packages = @(
               # Optional, uncomment to include:
               # @{ Id = 'sql-server-developer-advanced'; VersionQuery = '^-' }
-              @{ Id = 'ls-central-demo-database'; VersionQuery = '*^ >=28.0.0-rc' }
+              @{ Id = 'ls-central-demo-database'; VersionQuery = '*^ >=28.0' }
               @{ Id = 'bc-web-client'; VersionQuery = '' }
-              @{ Id = 'ls-central-app'; VersionQuery = '*^ >=28.0.0-rc' }
+              @{ Id = 'ls-central-app'; VersionQuery = '*^ >=28.0' }
 )
 
 Write-Host "Installing the following packages:"
