@@ -140,6 +140,7 @@ Imports a license file into a Business Central database
 Import-NAVServerLicense &lt;server instance&gt; -LicenseData ([Byte[]]$(Get-Content -Path "&lt;license file&gt;" -Encoding Byte))
 
 ```
+$licenseFilePath = "C:\LS Retail\DEV.bclicense"
 Import-NAVServerLicense $serverInstance -LicenseData ([Byte[]]$(Get-Content -Path "$licenseFilePath" -Encoding Byte))
 ```
 
