@@ -187,6 +187,14 @@ Stop-BcContainer -containerName "<container name>"
 Stop-BcContainer -containerName "BC140CU4W1"
 ```
 
+### Remove Container
+
+Remove-BcContainer -containerName "<container name>"
+
+```
+Remove-BcContainer -containerName "BC290"
+```
+
 ### Import NAV/BC License
 
 Import a license in the container.
