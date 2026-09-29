@@ -19,6 +19,6 @@ A cheat sheets collection I made.
 * [Powershell](https://ricardopaiva.github.io/cheatsheet/powershell-cheat-sheet/)
 * [Business Central Features Availability](https://ricardopaiva.github.io/cheatsheet/business-central-features-availability/)
 
-Last updated: 2025-03-20
+Last updated: 2026-09-29
 
 My website: [https://ricardomoinhos.com/blog](https://ricardomoinhos.com/blog)
