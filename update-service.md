@@ -66,8 +66,8 @@ $Packages = @(
               # Optional, uncomment to include:
               # @{ Id = 'sql-server-developer-advanced'; VersionQuery = '^-' }
               @{ Id = 'ls-central-demo-database'; VersionQuery = '*^ >=28.0' }
-              @{ Id = 'bc-web-client'; VersionQuery = '' }
-              @{ Id = 'bc-server'; VersionQuery = '' }
+              @{ Id = 'bc-web-client'; VersionQuery = '28.0' }       # Make sure to match the version otherwise a more recent major version (if available) might be installed and should fail.
+              @{ Id = 'bc-server'; VersionQuery = '28.0' }           # Make sure to match the version otherwise a more recent major version (if available) might be installed and should fail.
               @{ Id = 'ls-central-app'; VersionQuery = '*^ >=28.0' }
 )
 
