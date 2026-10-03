@@ -11,7 +11,7 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.4.1"
 
 gem "just-the-docs"
-gem "jekyll-remote-theme", "~> 0.6.0"
+gem "jekyll-remote-theme", "~> 0.6.1"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
