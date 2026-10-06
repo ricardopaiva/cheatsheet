@@ -182,8 +182,8 @@ To bypass the restriction, the Anti-SSRF protection can be disabled entirely, or
 #### Disable the Anti-SSRF protection
 
 ```
-Set-NAVServerConfiguration -ServerInstance $serverInstanceName -KeyName NavHttpClientAntiSSRFEnabled -KeyValue false -ApplyTo $applyTo
-Set-NAVServerConfiguration -ServerInstance BC280 -KeyName NavHttpClientAntiSSRFEnabled -KeyValue false -ApplyTo All
+Set-NAVServerConfiguration -ServerInstance $serverInstanceName -KeyName NavHttpClientAntiSSRFEnabled -KeyValue false
+Set-NAVServerConfiguration -ServerInstance BC280 -KeyName NavHttpClientAntiSSRFEnabled -KeyValue false
 ```
 
 #### Allow-list specific internal addresses
@@ -191,8 +191,8 @@ Set-NAVServerConfiguration -ServerInstance BC280 -KeyName NavHttpClientAntiSSRFE
 Change *keyValue* to a comma-separated list of the hostnames, IP addresses or IP ranges that should be allowed.
 
 ```
-Set-NAVServerConfiguration -ServerInstance $serverInstanceName -KeyName NavHttpClientAntiSSRFAllowedAddresses -KeyValue $keyValue -ApplyTo $applyTo
-Set-NAVServerConfiguration -ServerInstance BC280 -KeyName NavHttpClientAntiSSRFAllowedAddresses -KeyValue "internalapi.domain.com,10.0.0.0/8" -ApplyTo All
+Set-NAVServerConfiguration -ServerInstance $serverInstanceName -KeyName NavHttpClientAntiSSRFAllowedAddresses -KeyValue $keyValue
+Set-NAVServerConfiguration -ServerInstance BC280 -KeyName NavHttpClientAntiSSRFAllowedAddresses -KeyValue "internalapi.domain.com,10.0.0.0/8"
 ```
 
 ## Web Server Instance Management
