@@ -4,6 +4,8 @@ nav_order: 3
 ---
 
 # {{ page.title }}
+Last updated: 2026-10-06
+
 {: .no_toc }
 
 ## Table of contents
@@ -168,7 +170,30 @@ Set-NAVServerConfiguration -ServerInstance $serverInstanceName -KeyName $keyName
 Set-NAVServerConfiguration -ServerInstance bc-w1-22 -KeyName DatabaseServer -KeyValue DatabaseServer.Domain.Com
 ```
 
+### Anti-SSRF Protection Blocking Internal HTTP Calls
 
+Starting with Business Central, the server instance blocks outbound HTTP calls (ex. via HttpClient in AL code) made to internal/private IP ranges or hostnames, as a protection against Server-Side Request Forgery (SSRF) attacks. This can prevent legitimate integrations with internal services (ex. on-premises web services, internal APIs) from working.
+
+To bypass the restriction, the Anti-SSRF protection can be disabled entirely, or specific addresses can be allow-listed, by configuring the following keys with *Set-NAVServerConfiguration*.
+
+{: .warning }
+> Disabling the Anti-SSRF protection entirely (*NavHttpClientAntiSSRFEnabled* = *false*) removes an important security control. Prefer allow-listing the specific addresses needed (*NavHttpClientAntiSSRFAllowedAddresses*) instead of disabling the protection.
+
+#### Disable the Anti-SSRF protection
+
+```
+Set-NAVServerConfiguration -ServerInstance $serverInstanceName -KeyName NavHttpClientAntiSSRFEnabled -KeyValue false -ApplyTo $applyTo
+Set-NAVServerConfiguration -ServerInstance BC280 -KeyName NavHttpClientAntiSSRFEnabled -KeyValue false -ApplyTo All
+```
+
+#### Allow-list specific internal addresses
+
+Change *keyValue* to a comma-separated list of the hostnames, IP addresses or IP ranges that should be allowed.
+
+```
+Set-NAVServerConfiguration -ServerInstance $serverInstanceName -KeyName NavHttpClientAntiSSRFAllowedAddresses -KeyValue $keyValue -ApplyTo $applyTo
+Set-NAVServerConfiguration -ServerInstance BC280 -KeyName NavHttpClientAntiSSRFAllowedAddresses -KeyValue "internalapi.domain.com,10.0.0.0/8" -ApplyTo All
+```
 
 ## Web Server Instance Management
 
