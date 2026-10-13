@@ -18,7 +18,8 @@ A cheat sheets collection I made.
 * [VSCode](https://ricardopaiva.github.io/cheatsheet/vscode-cheat-sheet/)
 * [Powershell](https://ricardopaiva.github.io/cheatsheet/powershell-cheat-sheet/)
 * [Business Central Features Availability](https://ricardopaiva.github.io/cheatsheet/business-central-features-availability/)
+* [Ollama](https://ricardopaiva.github.io/cheatsheet/ollama/)
 
-Last updated: 2026-09-29
+Last updated: 2026-10-13
 
 My website: [https://ricardomoinhos.com/blog](https://ricardomoinhos.com/blog)
